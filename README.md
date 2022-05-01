@@ -126,7 +126,7 @@ plt.show()
 ### Original image:
 ![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s1.png?raw=true)
 ### i)Image Translation
-![output]https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s2.png(?raw=true)
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s2.png?raw=true)
 
 ### ii) Image Scaling
 ![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s3.png?raw=true)
