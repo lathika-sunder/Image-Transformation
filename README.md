@@ -32,8 +32,9 @@ Sheared_image=cv2.warpPerspective(org_img,Shearing_matrix,(col2,int(row1.5)))
 
 ### Step5:
 
+Reflection of image can be achieved through the code 
 ```
-Reflection of image can be achieved through the code Reflection_matrix_row=np.float32([[1,0,0],[0,-1,row],[0,0,1]]) Reflected_image_row=cv2.warpPerspective(org_img,Reflection_matrix_row,(col,int(row)))
+Reflection_matrix_row=np.float32([[1,0,0],[0,-1,row],[0,0,1]]) Reflected_image_row=cv2.warpPerspective(org_img,Reflection_matrix_row,(col,int(row)))
 ```
 
 ### Step6:
