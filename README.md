@@ -44,7 +44,10 @@ Rotation_angle=np.radians(10) Rotation_matrix=np.float32([[np.cos(Rotation_angle
 ```
 
 ### Step7:
-Crop the image using cropped_image=org_img[10:350,320:560]
+Crop the image using 
+```
+cropped_image=org_img[10:350,320:560]
+```
 
 ### Step8:
 Display all the Transformed images.
