@@ -127,29 +127,29 @@ plt.imshow(cropped_image)
 ```
 ## Output:
 ### i)Image Translation
-![Screenshot (13)](https://user-images.githubusercontent.com/102652887/165504215-effa4620-da67-4cc6-b2c9-bd41ab1b69c7.png)
+
+![image](https://github.com/lathika-sunder/Image-Transformation/assets/95066409/cbd4dc5f-fdc8-4ac7-917d-3e310a139e16)
 
 
 ### ii) Image Scaling
 
-![Screenshot (14)](https://user-images.githubusercontent.com/102652887/165504265-789298c3-48d9-44a0-85c0-4d304145a254.png)
+
 
 ### iii)Image shearing
 
-![Screenshot (15)](https://user-images.githubusercontent.com/102652887/165504281-0f6abf55-0d1e-42d4-b8f8-9e0861900f2d.png)
+![image](https://github.com/lathika-sunder/Image-Transformation/assets/95066409/f472cfcb-d0eb-43e2-9db2-6e6301090e8a)
 
 ### iv)Image Reflection
 
-![Screenshot (16)](https://user-images.githubusercontent.com/102652887/165504309-140031d9-5c2a-432d-a8bb-8513d6d4449a.png)
 
 ### v)Image Rotation
 
 
-![Screenshot (18)](https://user-images.githubusercontent.com/102652887/165504337-4290633f-6158-47b7-aacf-3ca29893be02.png)
+
 
 ### vi)Image Cropping
 
-![Screenshot (19)](https://user-images.githubusercontent.com/102652887/165504374-6377efe3-0c28-4d6b-8cce-7372c940fc5d.png)
+![Uploading image.png…]()
 
 
 
