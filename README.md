@@ -34,6 +34,8 @@ Display all the Transformed images and end the program.
 ```python
 Developed By: Lathika Sunder
 Register Number:212221230054
+```
+```
 import numpy as np
 import cv2
 import matplotlib.pyplot as plt
