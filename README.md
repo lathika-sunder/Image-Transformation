@@ -1,155 +1,151 @@
 # Image-Transformation
-
-## Aim:
+## Aim
 To perform image transformation such as Translation, Scaling, Shearing, Reflection, Rotation and Cropping using OpenCV and Python.
 
 ## Software Required:
 Anaconda - Python 3.7
 
 ## Algorithm:
-
 ### Step1:
-Import the necessary libraries and read the original image and save it a image variable.
+Import the necessary libraries and read the original image and save it as a image variable.
 
-### Step2:
-Translate the image using
-```
-Translation_matrix=np.float32([[1,0,120],[0,1,120],[0,0,1]]) Translated_image=cv2.warpPerspective(org_img,Translation_matrix,(col,row))
-```
+### Step 2:
+Translate the image using M=np.float32([[1,0,20],[0,1,50],[0,0,1]]) translated_img=cv2.warpPerspective(input_img,M,(cols,rows))
 
-### Step3:
-Scale the image using
-```
-Scaling_Matrix=np.float32([[1.2,0,0],[0,1.2,0],[0,0,1]]) Scaled_image=cv2.warpPerspective(org_img,Scaling_Matrix,(col,row))
-```
+### Step 3:
+Scale the image using M=np.float32([[1.5,0,0],[0,2,0],[0,0,1]]) scaled_img=cv2.warpPerspective(input_img,M,(cols,rows))
 
-### Step4:
-Shear the image using 
-```
-Shearing_matrix=np.float32([[1,0.2,0],[0.2,1,0],[0,0,1]]) 
-Sheared_image=cv2.warpPerspective(org_img,Shearing_matrix,(col2,int(row1.5)))
-```
+### Step 4:
+Shear the image using M_x=np.float32([[1,0.2,0],[0,1,0],[0,0,1]]) sheared_img_xaxis=cv2.warpPerspective(input_img,M_x,(cols,rows))
 
-### Step5:
+### Step 5:
+Reflection of image can be achieved through the code M_x=np.float32([[1,0,0],[0,-1,rows],[0,0,1]]) reflected_img_xaxis=cv2.warpPerspective(input_img,M_x,(cols,rows))
 
-Reflection of image can be achieved through the code 
-```
-Reflection_matrix_row=np.float32([[1,0,0],[0,-1,row],[0,0,1]]) Reflected_image_row=cv2.warpPerspective(org_img,Reflection_matrix_row,(col,int(row)))
-```
+### Step 6:
+Rotate the image using angle=np.radians(45) M=np.float32([[np.cos(angle),-(np.sin(angle)),0],[np.sin(angle),np.cos(angle),0],[0,0,1]]) rotated_img=cv2.warpPerspective(input_img,M,(cols,rows))
 
-### Step6:
-Rotate the image using
-```
-Rotation_angle=np.radians(10) Rotation_matrix=np.float32([[np.cos(Rotation_angle),-np.sin(Rotation_angle),0], [np.sin(Rotation_angle),np.cos(Rotation_angle),0], [0,0,1]]) Rotated_image=cv2.warpPerspective(org_img,Rotation_matrix,(col,(row)))
-```
+#### Step 7:
+Crop the image using cropped_img=input_img[20:150,60:230]
 
-### Step7:
-Crop the image using 
-```
-cropped_image=org_img[10:350,320:560]
-```
-
-### Step8:
-Display all the Transformed images.
+#### Step 8:
+Display all the Transformed images and end the program.
 
 ## Program:
-
-``` 
+```python
 Developed By: Lathika Sunder
-Register Number:212220230054
-```
-
-```
-import cv2
+Register Number:212221230054
 import numpy as np
+import cv2
 import matplotlib.pyplot as plt
-original_img=cv2.imread("a.jpg")
-original_img=cv2.cvtColor(original_img,cv2.COLOR_BGR2RGB)
-plt.axis("off")
-plt.imshow(original_img)
-row,col,dim=original_img.shape
-```
-
-i)Image Translation
-```
-Translation_matrix=np.float32([[1,0,120],[0,1,120],[0,0,1]])
-Translated_image=cv2.warpPerspective(original_img,Translation_matrix,(col,row))
-plt.axis("off")
-plt.imshow(Translated_image)
-```
-
-ii) Image Scaling
-```
-Scaling_Matrix=np.float32([[1.5,0,0],[0,1.5,0],[0,0,1.2]])
-Scaled_image=cv2.warpPerspective(original_img,Scaling_Matrix,(col,row))
-plt.axis("off")
-plt.imshow(Scaled_image)
-```
-
-iii)Image Shearing
-```
-Shearing_matrix=np.float32([[1,0.3,0],[0.3,1,0],[0,0,1]])
-Sheared_image=cv2.warpPerspective(original_img,Shearing_matrix,(col*2,int(row*1.5)))
-plt.axis("off")
-plt.imshow(Sheared_image)
-```
-
-iv)Image Reflection
-```
-Reflection_matrix_col=np.float32([[-1,0,col],[0,1,0],[0,0,1]])
-Reflected_image_col=cv2.warpPerspective(original_img,Reflection_matrix_col,(col,int(row)))
-plt.axis("off")
-plt.imshow(Reflected_image_col)
+input_image = cv2.imread("tree.jpg")
+input_image = cv2.cvtColor(input_image,cv2.COLOR_BGR2RGB)
+plt.axis('off')
+plt.imshow(input_image)
+plt.show()
+rows,cols,dim = input_image.shape
+## i)Image Translation
+M = np.float32([[1,0,100],
+               [0,1,200],
+               [0,0,1]])
+translated_image = cv2.warpPerspective(input_image,M,(cols,rows))
+plt.axis('off')
+plt.imshow(translated_image)
+plt.show()
 
 
-Reflection_matrix_row=np.float32([[1,0,0],[0,-1,row],[0,0,1]])
-Reflected_image_row=cv2.warpPerspective(original_img,Reflection_matrix_row,(col,int(row)))
-plt.axis("off")
-plt.imshow(Reflected_image_row)
-```
+## ii) Image Scaling
+M = np.float32([[1.5,0,0],
+               [0,1.8,0],
+               [0,0,1]])
+scaled_image = cv2.warpPerspective(input_image,M,(cols*2,rows*2))
+plt.axis('off')
+plt.imshow(scaled_image)
+plt.show()
 
-v)Image Rotation
-```
-Rotation_angle=np.radians(10)
-Rotation_matrix=np.float32([[np.cos(Rotation_angle),-np.sin(Rotation_angle),0],
-                                [np.sin(Rotation_angle),np.cos(Rotation_angle),0],
-                                [0,0,1]])
-Rotated_image=cv2.warpPerspective(original_img,Rotation_matrix,(col,(row)))
-plt.axis("off")
-plt.imshow(Rotated_image)
 
-vi)Image Cropping
-cropped_image=original_img[50:1300,300:560]
-plt.axis("off")
+## iii)Image shearing
+M_x = np.float32([[1,0.5,0],
+                 [0,1,0],
+                 [0,0,1]])
+M_y = np.float32([[1,0,0],
+                 [0.5,1,0],
+                 [0,0,1]])
+sheared_xaxis = cv2.warpPerspective(input_image,M_x,(int(cols*1.5),int(rows*1.5)))
+sheared_yaxis = cv2.warpPerspective(input_image,M_y,(int(cols*1.5),int(rows*1.5)))
+plt.axis('off')
+plt.imshow(sheared_xaxis)
+plt.show()
+plt.axis('off')
+plt.imshow(sheared_yaxis)
+plt.show()
+
+
+## iv)Image Reflection
+M_x = np.float32([[1,0,0],
+                 [0,-1,rows],
+                 [0,0,1]])
+M_y = np.float32([[-1,0,cols],
+                 [0,1,0],
+                 [0,0,1]])
+reflected_xaxis = cv2.warpPerspective(input_image,M_x,(int(cols),int(rows)))
+reflected_yaxis = cv2.warpPerspective(input_image,M_y,(int(cols),int(rows)))
+plt.axis('off')
+plt.imshow(reflected_xaxis)
+plt.show()
+plt.axis('off')
+plt.imshow(reflected_yaxis)
+plt.show()
+
+
+
+## v)Image Rotation
+angle = np.radians(30)
+M = np.float32([[np.cos(angle),-(np.sin(angle)),0],
+               [np.sin(angle),np.cos(angle),0],
+               [0,0,1]])
+rotated_image = cv2.warpPerspective(input_image,M,(int(cols),int(rows)))
+plt.axis('off')
+plt.imshow(rotated_image)
+plt.show()
+
+
+
+## vi)Image Cropping
+cropped_image = input_image[100:300,100:300]
+plt.axis('off')
 plt.imshow(cropped_image)
+plt.show()
+
+
+
+
 
 
 ```
 ## Output:
+### Original image:
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s1.png?raw=true)
 ### i)Image Translation
-
-![image](https://github.com/lathika-sunder/Image-Transformation/assets/95066409/cbd4dc5f-fdc8-4ac7-917d-3e310a139e16)
-
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s2.png?raw=true)
 
 ### ii) Image Scaling
-
-
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s3.png?raw=true)
 
 ### iii)Image shearing
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s4.png?raw=true)
 
-![image](https://github.com/lathika-sunder/Image-Transformation/assets/95066409/f472cfcb-d0eb-43e2-9db2-6e6301090e8a)
 
 ### iv)Image Reflection
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s5.png?raw=true)
+
 
 
 ### v)Image Rotation
-
-
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s6.png?raw=true)
 
 
 ### vi)Image Cropping
-
-![Uploading image.png…]()
+![output](https://github.com/Hemapriya-2004/Image-Transformation/blob/main/s7.png?raw=true)
 
 
 
